@@ -36,7 +36,6 @@ public class GUI extends BorderPane {
                 addToggleOptions(),
                 addExportButton()
         );
-
         return hBox;
     }
 
@@ -46,50 +45,7 @@ public class GUI extends BorderPane {
         button.setOnAction(event -> {
             group3D.toggleAnimation();
         });
-
         return button;
-    }
-
-    private Button addExportButton() {
-        Button button = new Button("Export");
-        button.setPrefSize(150, 50);
-        button.setDisable(true);
-        button.setOnAction(event -> {
-
-        });
-        return button;
-    }
-
-    private HBox addToggleOptions() {
-        Button axesButton = new Button("Toggle Axes");
-        axesButton.setPrefSize(100, 40);
-        axesButton.setTranslateY(5);
-        axesButton.setOnAction(event -> {
-            group3D.toggleAxes();
-        });
-
-        Button containerButton = new Button("Toggle Bounds");
-        containerButton.setPrefSize(100, 40);
-        containerButton.setTranslateY(5);
-        containerButton.setOnAction(event -> {
-            group3D.toggleContainer();
-        });
-
-        Button view2DButton = new Button("Toggle 2D View");
-        view2DButton.setPrefSize(100, 40);
-        view2DButton.setTranslateY(5);
-        view2DButton.setDisable(true);
-        view2DButton.setOnAction(event -> {
-
-        });
-
-        HBox hBox = new HBox();
-        hBox.setPadding(new Insets(0,5,0,5));
-        hBox.setStyle("-fx-background-color: rgba(216, 224, 230, 0.7);");
-        hBox.setSpacing(10);
-        hBox.getChildren().addAll(axesButton, containerButton, view2DButton);
-
-        return hBox;
     }
 
     private HBox addSpeedOptions() {
@@ -159,8 +115,48 @@ public class GUI extends BorderPane {
         hBox.setStyle("-fx-background-color: rgba(216, 224, 230, 0.7);");
         hBox.setSpacing(10);
         hBox.getChildren().addAll(resetButton, vBox1, vBox2, vBox3, confirmButton);
-
         return hBox;
+    }
+
+    private HBox addToggleOptions() {
+        Button axesButton = new Button("Toggle Axes");
+        axesButton.setPrefSize(100, 40);
+        axesButton.setTranslateY(5);
+        axesButton.setOnAction(event -> {
+            group3D.toggleAxes();
+        });
+
+        Button containerButton = new Button("Toggle Bounds");
+        containerButton.setPrefSize(100, 40);
+        containerButton.setTranslateY(5);
+        containerButton.setOnAction(event -> {
+            group3D.toggleContainer();
+        });
+
+        Button view2DButton = new Button("Toggle 2D View");
+        view2DButton.setPrefSize(100, 40);
+        view2DButton.setTranslateY(5);
+        view2DButton.setDisable(true);
+        view2DButton.setOnAction(event -> {
+
+        });
+
+        HBox hBox = new HBox();
+        hBox.setPadding(new Insets(0,5,0,5));
+        hBox.setStyle("-fx-background-color: rgba(216, 224, 230, 0.7);");
+        hBox.setSpacing(10);
+        hBox.getChildren().addAll(axesButton, containerButton, view2DButton);
+        return hBox;
+    }
+
+    private Button addExportButton() {
+        Button button = new Button("Export");
+        button.setPrefSize(150, 50);
+        button.setDisable(true);
+        button.setOnAction(event -> {
+
+        });
+        return button;
     }
 
 }
