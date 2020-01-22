@@ -1,4 +1,6 @@
 import javafx.geometry.Point3D;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
@@ -26,10 +28,21 @@ public class Pen3D extends Sphere {
         Rotate rotateAroundCenter = new Rotate(-Math.toDegrees(angle), axisOfRotation);
 
         Cylinder line = new Cylinder(3, height);
+        PhongMaterial material = new PhongMaterial();
+        material.setDiffuseColor(calcColor(target));
+        line.setMaterial(material);
 
         line.getTransforms().addAll(moveToMidpoint, rotateAroundCenter);
 
         return line;
+    }
+
+    private Color calcColor(Point3D target) {
+        int x = (int)Math.ceil((target.getX() - -50) / (50 - -50) * (255 - 0) + 0);
+        int y = (int)Math.ceil((target.getY() - -50) / (50 - -50) * (255 - 0) + 0);
+        int z = (int)Math.ceil((target.getZ() - -50) / (50 - -50) * (255 - 0) + 0);
+
+        return Color.rgb(x, y, z);
     }
 
 }
