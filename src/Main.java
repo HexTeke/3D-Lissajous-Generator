@@ -40,7 +40,7 @@ public class Main extends Application {
         root.getChildren().add(gui);
         root.getChildren().add(group3D);
 
-        primaryStage.setTitle("Lissajous 3D");
+        primaryStage.setTitle("Pretzel");
         primaryStage.setScene(scene);
         primaryStage.show();
 
