@@ -184,7 +184,7 @@ public class Group3D extends Group {
         }
     }
 
-    public void reset(double x, double y, double z) {
+    public void reset(double x, double rotX, double y, double rotY, double z, double rotZ) {
         // reset view
         this.translateZProperty().set(-800);
         angleX.set(0.0);
@@ -196,9 +196,9 @@ public class Group3D extends Group {
         this.getChildren().removeAll(drawing);
 
         // reset tracers
-        xTracer.setRotate(270);
-        yTracer.setRotate(0);
-        zTracer.setRotate(0);
+        xTracer.setRotate(rotX);
+        yTracer.setRotate(rotY);
+        zTracer.setRotate(rotZ);
 
         // reset pen
         pen3D.setTranslateX(xTracer.localToParent(0,0,0).getX());
