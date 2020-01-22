@@ -85,6 +85,7 @@ public class Group3D extends Group {
         xTracer.setTranslateZ(100);
         xTracer.getTransforms().add(new Translate(0,-50,0));
         xTracer.setRotationAxis(Rotate.Z_AXIS);
+        xTracer.setRotate(270);   // Initial Rotate
 
         yTracer = new Sphere(5);
         yTracer.setTranslateX(-100);
@@ -195,7 +196,7 @@ public class Group3D extends Group {
         this.getChildren().removeAll(drawing);
 
         // reset tracers
-        xTracer.setRotate(0);
+        xTracer.setRotate(270);
         yTracer.setRotate(0);
         zTracer.setRotate(0);
 
