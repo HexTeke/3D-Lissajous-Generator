@@ -1,5 +1,5 @@
-# 3D Lissajous Generator
-A program that creates simple 3D lissajous figures in real-time based on your input.
+# Pretzel
+Pretzel is an interactive desktop application that creates simple 3D lissajous figures in real-time based on your input.
 
 ## Screenshots
 ![](/example/image0.png)
