@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Box;
@@ -166,10 +167,12 @@ public class Group3D extends Group {
         if(axesShown) {
             this.getChildren().removeAll(xPane, yPane, zPane);
             this.getChildren().removeAll(xTracer, yTracer, zTracer);
+            this.getChildren().remove(pen3D);
             axesShown = false;
         } else {
             this.getChildren().addAll(xPane, yPane, zPane);
             this.getChildren().addAll(xTracer, yTracer, zTracer);
+            this.getChildren().add(pen3D);
             axesShown = true;
         }
     }
@@ -236,6 +239,10 @@ public class Group3D extends Group {
         stage.addEventHandler(ScrollEvent.SCROLL, event -> {
             double delta = event.getDeltaY();
             this.translateZProperty().set(this.getTranslateZ() - delta);
+        });
+
+        stage.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+
         });
 
     }
