@@ -1,5 +1,6 @@
 import javafx.application.Application;
 import javafx.scene.*;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -25,6 +26,7 @@ public class Main extends Application {
 //        stage.setMinWidth(STAGE_WIDTH);
 //        stage.setMinHeight(STAGE_HEIGHT);
         stage.setResizable(false);
+        stage.getIcons().add(new Image(Main.class.getResourceAsStream("res/icon.png")));
 
         root = new Group();
         camera = new PerspectiveCamera();
